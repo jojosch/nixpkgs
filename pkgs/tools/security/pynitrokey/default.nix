@@ -4,12 +4,12 @@ with python3Packages;
 
 buildPythonApplication rec {
   pname = "pynitrokey";
-  version = "0.4.34";
+  version = "0.4.35";
   format = "flit";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-lMXoDkNiAmGb6e4u/vZMcmXUclwW402YUGihLjWIr+U=";
+    hash = "sha256-j36AQGhSJJ8T5izRCHg/VMUtCbKcFUZctspIS/uHsK0=";
   };
 
   propagatedBuildInputs = [
@@ -22,7 +22,6 @@ buildPythonApplication rec {
     fido2
     intelhex
     nkdfu
-    nrfutil
     python-dateutil
     pyusb
     requests
@@ -31,6 +30,7 @@ buildPythonApplication rec {
     urllib3
     tlv8
     typing-extensions
+    protobuf
   ];
 
   nativeBuildInputs = [
@@ -42,6 +42,7 @@ buildPythonApplication rec {
     "python-dateutil"
     "spsdk"
     "typing_extensions"
+    "protobuf"
   ];
 
   # libnitrokey is not propagated to users of pynitrokey
